@@ -1,0 +1,125 @@
+Strings:
+sequence of characters.predefined class.present in lang package.
+used to develope large size application
+
+DECLARATION:
+1)String str1=" "; //string literal.stored in string pool.Allow duplication.Faster
+2)String str2=new String(" "); //new keyword. stored in heap memory.Prevent duplication.Slower
+ System.out.println(s1.equals(s2)); //to compare strings
+ 
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+      Scanner s=new Scanner(System.in);
+      System.out.println("Enter the Strings:");
+      String s1=s.nextLine();
+      String s2=new String(s.nextLine());
+      System.out.println(s1.equals(s2)); //case sensitive
+System.out.println(s1.equalsIgnoreCase(s2)); //case insensitive
+    }
+}
+
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+      Scanner s=new Scanner(System.in);
+      System.out.println("Enter the Name:");
+      String t=s.nextLine();
+      String st1=s.nextLine();
+      String st2=new String(s.nextLine());
+      System.out.println(t.equals(st1)&&t.equals(st2));
+    }
+}
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+     String str1="nikash";
+     System.out.println(str1.length());
+     for(int i=str1.length()-1;i>=0;i--){
+      System.out.print(str1.charAt(i));
+    }
+    }
+}
+
+substring:
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str="Nikash";
+        String substr=str.substring(2);
+        System.out.println("Substring is:"+substr);
+    
+    }
+}
+
+indexOf():
+   Show the index of first occurence of the given string 
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+     String str=" nikash ";
+      System.out.println(str.indexOf("sh"));
+       System.out.println(str.indexOf('m'));
+	 System.out.println(str.charAt('3'));
+		//trim
+	 System.out.println(str);
+	System.out.println(str.trim());
+ System.out.println(str.replace('s','a')); //replace a char
+
+		//change memory location
+	 String str1=new String("nikash");
+     String str2="nikash";
+     String str3=str1.intern();
+    }
+}
+
+
+Wrapper Class:
+1)In java it provide a way to use primitive data types(int,double,char,etc.)as objects.
+2)Each primitive type has a corressponding wrapper class.
+2 types:
+Autoboxing
+Unboxing
+
+Integer,boolean,character -often wrapper classes
+int->Integer
+char->Character
+byte->Byte
+float->Float
+double->Double
+
+Integer.parseInt() //convert string into integer
+ArrayList<>
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str="123,345,789";
+        String[] arr=str.split(",");
+        int max=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(Integer.parseInt(arr[i])>max)
+            {
+                max=Integer.parseInt(arr[i]);
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+StringBuilder:
+1)append(String str):Add a string at the end
+2)insert(int offset,String str):Inserts a string at the specified position
+3)replace(int start,int end, String str):Replaces characters within range
+4)reverse():Reverses the string
+
+Diff between stringbuffer and stringbuilder:
+1)Stringbuffer -synchoronize builder -asynchoronize
+		threat safety	      threat unsafety
+		
+Mutable-can be changed
+immutable-cannot be changed
