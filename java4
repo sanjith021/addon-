@@ -1,0 +1,73 @@
+element stored in array -log(n)
+DS-linkedlist,arraylist
+DSA-user algorithms
+HashMap<>-key and value pair
+Key-name(student name) also refered as the object
+value-value of the name(nikash)
+
+remove a string:
+import java.util.*;
+
+public class Arraylist {
+	public static void main(String[] args) 
+	{ 
+		Scanner s=new Scanner(System.in);
+        System.out.println("Enter the String:");
+        String word=s.nextLine();
+
+        String result=word.replaceAll("[aeiouAEIOU]", "");
+        System.out.println(result);
+        s.close();
+	} 
+} 
+
+output:
+Enter the String:
+nikash
+nksh
+
+EXCEPTION HANDLING:
+1)try
+2)catch
+3)throws
+4)throw
+
+Throw -used to create a custom error or throw a new error
+
+import java.util.*;
+
+class IdontLikeTheName extends Exception{
+    public IdontLikeTheName(String message)
+    {
+        super(message);
+    }
+}
+public class Arraylist {
+	public static void main(String[] args) 
+	{ 
+		Scanner s=new Scanner(System.in);
+        try{
+            String str=s.nextLine();
+            if(str.equals("Hello"))
+            {
+                throw new IdontLikeTheName("Change text");
+            }
+            
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        
+	} 
+}
+
+output:
+PS D:\addon> javac Arraylist.java
+PS D:\addon> java Arraylist
+Hello
+IdontLikeTheName: Change text
+PS D:\addon> javac Arraylist.java
+PS D:\addon> java Arraylist
+hi
+PS D:\addon> 
